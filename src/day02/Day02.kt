@@ -1,5 +1,7 @@
 package day02
 
+import util.StringUtil
+import util.StringUtil.Companion.parseInt
 import java.io.File
 import kotlin.math.abs
 
@@ -15,7 +17,7 @@ val example = """
 class PartA {
 
     private fun handleLine(line: String): Int {
-        val digits = line.split(" ").map { Integer.valueOf(it) }
+        val digits = parseInt(line)
 
         val increasing = digits[0] < digits[1]
 
@@ -62,7 +64,7 @@ class PartB {
     }
 
     private fun handleLine(line: String): Int {
-        val digits = line.split(" ").map { Integer.valueOf(it) }
+        val digits = parseInt(line)
 
         val newList = mutableListOf<List<Int>>()
         for (i in 0 .. digits.size) {
